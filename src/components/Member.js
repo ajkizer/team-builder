@@ -1,13 +1,18 @@
 import React from "react";
-import MemberCard from "./MemberList";
 
 const Member = props => {
   return (
-    <div>
-      <h1>{props.name}</h1>
-      <h3>{props.title}</h3>
-      <p>Department: {props.department}</p>
-      <p>Shift: {props.shift}</p>
+    <div className="member-list">
+      {props.memberList.map(member => {
+        return (
+          <div>
+            <h1>{member.name}</h1>
+            <h3>{member.title}</h3>
+            <p>{member.department}</p>
+            <p>{member.shift}</p>
+          </div>
+        );
+      })}
     </div>
   );
 };

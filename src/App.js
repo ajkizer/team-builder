@@ -3,18 +3,20 @@ import "./App.css";
 import team from "./data";
 import { useState } from "react";
 import { Route } from "react-router-dom";
-import MemberCard from "./components/MemberList";
+import NewMemberForm from "./components/NewMemberForm";
 import Member from "./components/Member";
 
 function App() {
   const [teamMembers, setTeamMembers] = useState(team);
+  const addNewMember = member => {
+    setTeamMembers([...teamMembers, member]);
+  };
 
   return (
     <div className="App">
-      <Route
-        path="/"
-        render={props => <MemberCard {...props} teamMembers={teamMembers} />}
-      />
+      <h1>Meet The Team</h1>
+      <NewMemberForm addNewMember={addNewMember} />
+      <Member memberList={teamMembers} />
     </div>
   );
 }

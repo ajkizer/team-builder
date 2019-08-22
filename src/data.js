@@ -1,8 +1,7 @@
 const team = [
   {
     id: 1,
-    photo:
-      "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiU3frNh5XkAhXQl54KHdbzDzgQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.tumblr.com%2Ftagged%2Felliot%2Balderson%2Bicons&psig=AOvVaw0r42Btv4HixrQsuJIrLuIh&ust=1566514548120289",
+    photo: "../img/elliot.png",
     name: "Elliot Alderson",
     title: "Director of IT",
     department: "IT",
