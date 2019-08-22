@@ -14,6 +14,14 @@ function NewMemberForm(props) {
 
   const submitForm = e => {
     e.preventDefault();
+    if (
+      member.name == "" ||
+      member.title == "" ||
+      member.department == "" ||
+      member.shift == ""
+    ) {
+      alert("Please do not leave any blank fields");
+    }
     const newMember = {
       ...member,
       id: Date.now()
@@ -23,44 +31,47 @@ function NewMemberForm(props) {
   };
 
   return (
-    <form onSubmit={submitForm}>
-      <label htmlFor="name">Name</label>
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        value={member.name}
-        onChange={changeHandler}
-      />
+    <div className="form-wrapper">
+      <form onSubmit={submitForm} autocomplete="off">
+        <h3>Create New Team Member</h3>
+        <label htmlFor="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          value={member.name}
+          onChange={changeHandler}
+        />
 
-      <label htmlFor="title">Title</label>
-      <input
-        type="text"
-        name="title"
-        placeholder="Title"
-        value={member.title}
-        onChange={changeHandler}
-      />
+        <label htmlFor="title">Title</label>
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          value={member.title}
+          onChange={changeHandler}
+        />
 
-      <label htmlFor="department">Department</label>
-      <input
-        type="text"
-        name="department"
-        placeholder="department"
-        value={member.department}
-        onChange={changeHandler}
-      />
+        <label htmlFor="department">Department</label>
+        <input
+          type="text"
+          name="department"
+          placeholder="department"
+          value={member.department}
+          onChange={changeHandler}
+        />
 
-      <label htmlFor="shift">Shift</label>
-      <input
-        type="text"
-        name="shift"
-        placeholder="Shift"
-        value={member.shift}
-        onChange={changeHandler}
-      />
-      <button type="submit">Add New Team Member</button>
-    </form>
+        <label htmlFor="shift">Shift</label>
+        <input
+          type="text"
+          name="shift"
+          placeholder="Shift"
+          value={member.shift}
+          onChange={changeHandler}
+        />
+        <button type="submit">Add New Team Member</button>
+      </form>
+    </div>
   );
 }
 

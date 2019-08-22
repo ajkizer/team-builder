@@ -5,11 +5,16 @@ const Member = props => {
     <div className="member-list">
       {props.memberList.map(member => {
         return (
-          <div>
+          <div className="member-card">
             <h1>{member.name}</h1>
-            <h3>{member.title}</h3>
-            <p>{member.department}</p>
-            <p>{member.shift}</p>
+            <h3>
+              <em>{member.title}</em>
+            </h3>
+            <p>
+              <em>{member.email}</em>
+            </p>
+            <p>Department: {member.department}</p>
+            <p>Primary shift: {member.shift}</p>
           </div>
         );
       })}

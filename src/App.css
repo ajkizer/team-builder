@@ -7,3 +7,38 @@ img {
   height: 200px;
   border-radius: 100%;
 }
+
+.member-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.member-card {
+  width: 300px;
+}
+
+.form-wrapper {
+  width: 500px;
+  border: 1px solid rgba(20, 20, 20, 0.685);
+  border-radius: 10px;
+  padding: 2%;
+  text-align: center;
+  margin: 2% auto 5%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label,
+button {
+  margin-top: 15px;
+}
+
+button {
+  width: 200px;
+  background: white;
+  margin: 15px auto;
+}
